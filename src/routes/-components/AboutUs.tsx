@@ -26,7 +26,7 @@ export default function AboutUs() {
         </ul>
       </Container>
       <Container className="grid gap-4">
-        <h1 className="text-2xl lg:text-3xl font-semibold">Our Vibe</h1>
+        <h1 className="text-2xl lg:text-3xl font-semibold">Motto</h1>
         <p>We take our work seriously—just not ourselves. You won’t find stiff corporate jargon here, just straight talk and results. We’re the team you call when you need <b>clever solutions, not just technical ones</b>.</p>
         <p>So, if you’re up against a digital ghost, a security blind spot, or a mystery that needs solving, let’s chat. <b>P vs NP Solutions</b>—because some problems aren’t as hard as they seem when you know where to look.</p>
         <p>(And yes, we *do* like a good challenge. Try us.)</p>
