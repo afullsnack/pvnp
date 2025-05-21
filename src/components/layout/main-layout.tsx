@@ -10,7 +10,7 @@ export const MainLayout: React.FC<{
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="swap.flint-ui-theme">
-      <Main>
+      <Main className="px-3 md:px-0">
         <Header1 />
         {children}
       </Main>

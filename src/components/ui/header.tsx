@@ -113,7 +113,7 @@ function Header1() {
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
           {isOpen && (
-            <Container className="absolute top-20 border-t flex flex-col w-full right-0 bg-background shadow-lg py-4 px-4 gap-8">
+            <Container className="absolute top-10 border-t border-b flex flex-col w-full right-0 bg-background shadow-lg py-4 px-4 gap-8">
               {navigationItems.map((item) => (
                 <div key={item.title}>
                   <div className="flex flex-col gap-2">
@@ -121,9 +121,10 @@ function Header1() {
                       <Link
                         to={item.href}
                         className="flex justify-between items-center"
+                        onClick={() => setOpen(false)}
                       >
                         <span className="text-lg">{item.title}</span>
-                        <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
+                        {/*<MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />*/}
                       </Link>
                     ) : (
                       <p className="text-lg">{item.title}</p>
