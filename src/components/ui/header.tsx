@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, Sparkle, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Container } from "../craft";
@@ -34,7 +34,7 @@ function Header1() {
     },
     {
       title: "Request data destruction",
-      href: "/#request-data-destruction",
+      href: "/request-data-destruction",
       description: "Coaler"
     }
   ];
@@ -104,7 +104,7 @@ function Header1() {
 
           {/* TODO: Add logo for mobile view */}
           <div className="lg:hidden flex justify-start items-center w-full">
-            <Sparkle className="size-6 fill-black stroke-1 ml-2" />
+            <img src="/logo.png" className="object-cover size-6 ml-2" />
           </div>
         </div>
         {/* For responsiveness */}
