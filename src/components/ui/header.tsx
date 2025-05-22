@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, MoveRight, Sparkle, X } from "lucide-react";
+import { Menu, Sparkle, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Container } from "../craft";
