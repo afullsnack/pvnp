@@ -24,18 +24,18 @@ function Header1() {
     },
     {
       title: "Services",
-      href: "/#services",
+      href: "/services",
       description: "",
     },
     {
       title: "Contact Us",
-      href: "/#contact",
+      href: "/contact",
       description: "",
     },
     {
       title: "Request data destruction",
       href: "/request-data-destruction",
-      description: "Coaler"
+      description: ""
     }
   ];
 

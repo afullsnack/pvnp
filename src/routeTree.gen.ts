@@ -11,7 +11,9 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ServicesImport } from './routes/services'
 import { Route as RequestDataDestructionImport } from './routes/request-data-destruction'
+import { Route as ContactImport } from './routes/contact'
 import { Route as IndexImport } from './routes/index'
 import { Route as DemoTanstackQueryImport } from './routes/demo.tanstack-query'
 import { Route as DemoStartServerFuncsImport } from './routes/demo.start.server-funcs'
@@ -21,9 +23,21 @@ import { Route as DemoFormAddressImport } from './routes/demo.form.address'
 
 // Create/Update Routes
 
+const ServicesRoute = ServicesImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const RequestDataDestructionRoute = RequestDataDestructionImport.update({
   id: '/request-data-destruction',
   path: '/request-data-destruction',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,11 +88,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
     '/request-data-destruction': {
       id: '/request-data-destruction'
       path: '/request-data-destruction'
       fullPath: '/request-data-destruction'
       preLoaderRoute: typeof RequestDataDestructionImport
+      parentRoute: typeof rootRoute
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesImport
       parentRoute: typeof rootRoute
     }
     '/demo/tanstack-query': {
@@ -123,7 +151,9 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/request-data-destruction': typeof RequestDataDestructionRoute
+  '/services': typeof ServicesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -133,7 +163,9 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/request-data-destruction': typeof RequestDataDestructionRoute
+  '/services': typeof ServicesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -144,7 +176,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/request-data-destruction': typeof RequestDataDestructionRoute
+  '/services': typeof ServicesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -156,7 +190,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
     | '/request-data-destruction'
+    | '/services'
     | '/demo/tanstack-query'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -165,7 +201,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
     | '/request-data-destruction'
+    | '/services'
     | '/demo/tanstack-query'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -174,7 +212,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contact'
     | '/request-data-destruction'
+    | '/services'
     | '/demo/tanstack-query'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -185,7 +225,9 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
   RequestDataDestructionRoute: typeof RequestDataDestructionRoute
+  ServicesRoute: typeof ServicesRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
   DemoFormAddressRoute: typeof DemoFormAddressRoute
   DemoFormSimpleRoute: typeof DemoFormSimpleRoute
@@ -195,7 +237,9 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
   RequestDataDestructionRoute: RequestDataDestructionRoute,
+  ServicesRoute: ServicesRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
   DemoFormAddressRoute: DemoFormAddressRoute,
   DemoFormSimpleRoute: DemoFormSimpleRoute,
@@ -214,7 +258,9 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/contact",
         "/request-data-destruction",
+        "/services",
         "/demo/tanstack-query",
         "/demo/form/address",
         "/demo/form/simple",
@@ -225,8 +271,14 @@ export const routeTree = rootRoute
     "/": {
       "filePath": "index.tsx"
     },
+    "/contact": {
+      "filePath": "contact.tsx"
+    },
     "/request-data-destruction": {
       "filePath": "request-data-destruction.tsx"
+    },
+    "/services": {
+      "filePath": "services.tsx"
     },
     "/demo/tanstack-query": {
       "filePath": "demo.tanstack-query.tsx"
