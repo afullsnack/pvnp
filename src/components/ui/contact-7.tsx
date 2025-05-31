@@ -18,7 +18,7 @@ interface Contact7Props {
 
 export const Contact7 = ({
   title = 'Contact Us',
-  description = 'Contact the support team at N vs nP.',
+  description = 'Contact the support team at P vs nP.',
   emailLabel = 'Email',
   emailDescription = 'We respond within 24 hours.',
   email = 'Manitorx168@tutamail.com',
