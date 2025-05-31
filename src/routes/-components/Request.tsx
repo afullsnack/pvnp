@@ -10,7 +10,7 @@ export default function Request() {
         <div className="grid gap-4">
           <h3 className="text-xl font-bold m-0">Step 1</h3>
           <span>
-            Contact data management team at
+            Contact data management team at manitorx168@tutamail.com
           </span>
         </div>
         <div className="grid gap-4">
