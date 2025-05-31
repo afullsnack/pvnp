@@ -26,7 +26,7 @@ export const Contact7 = ({
   // officeDescription = 'Drop by our office for a chat.',
   // officeAddress = '1 Eagle St, Brisbane, QLD, 4000',
   sessionLabel = 'Session',
-  sessionMessengerDescription = 'Use the sassion messenger ID: ',
+  sessionMessengerDescription = 'Use the session messenger ID: ',
   sessionMessengerId = '05394cdf752f12dc42b7e5cbfe6588d4b512ec7dabb276a8e023ee79193210df1f',
 }: Contact7Props) => {
   const copySessionId = useCallback(() => {
