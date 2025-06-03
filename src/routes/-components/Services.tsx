@@ -88,7 +88,7 @@ export default function Services() {
               <CardContent>
                 <div className="grid gap-2">
                   <ShieldCheck />
-                  Security setup and consultation
+                  Cyber security setup and consultation
                 </div>
               </CardContent>
             </Card>
